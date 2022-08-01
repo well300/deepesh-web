@@ -1,0 +1,241 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+:root {
+  font-size: 18px;
+}
+body {
+  --color-text: #111;
+  --color-bg: #b6eaff;
+  --color-link: #161616;
+  --color-link-hover: #000;
+  --color-bg-alt: #50acd6;
+  --color-text-alt: #111;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image: url(https://images.assetsdelivery.com/compings_v2/paseven/paseven2102/paseven210200135.jpg);
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: roc-grotesk, sans-serif;
+  overflow-x: hidden;
+}
+.js .loading:before,
+.js .loading:after {
+  content: "";
+  z-index: 1000;
+  position: fixed;
+}
+.js .loading:before {
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+  top: 0;
+  left: 0;
+}
+.js .loading:after {
+  width: 60px;
+  height: 60px;
+  opacity: 0.4;
+  background: var(--color-link);
+  border-radius: 50%;
+  margin: -30px 0 0 -30px;
+  animation: loaderAnim 0.7s linear infinite alternate forwards;
+  top: 50%;
+  left: 50%;
+}
+@keyframes loaderAnim {
+  to {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+}
+a {
+  color: var(--color-link);
+  outline: none;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-link-hover);
+  outline: none;
+}
+a:focus {
+  background: #d3d3d3;
+  outline: none;
+}
+a:focus:not(:focus-visible) {
+  background: 0 0;
+}
+a:focus-visible {
+  background: 0 0;
+  outline: 2px solid red;
+}
+.unbutton {
+  font: inherit;
+  background: 0 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.unbutton:focus {
+  outline: none;
+}
+.frame {
+  z-index: 1000;
+  width: 100%;
+  max-width: none;
+  pointer-events: none;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: 1fr;
+  grid-template-areas: "title" "prev" "sponsor" "demos";
+  align-content: space-between;
+  padding: 1rem;
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.frame a,
+.frame button {
+  pointer-events: auto;
+}
+.frame__title {
+  grid-area: title;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+.frame__title-main {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.frame__title-back {
+  align-items: flex-end;
+  display: flex;
+  position: relative;
+}
+.frame__title-back span {
+  display: none;
+}
+.frame__title-back svg {
+  fill: var(--color-link);
+}
+.frame__title-back:hover svg,
+.frame__title-back:focus svg {
+  fill: var(--color-link-hover);
+}
+.frame__demos {
+  grid-area: demos;
+}
+.frame__demos a {
+  margin-left: 2rem;
+  position: relative;
+}
+.frame__demo--current,
+.frame__demo--current:hover {
+  color: var(--color-text);
+}
+.frame__prev {
+  grid-area: prev;
+  justify-self: start;
+}
+.frame__demos-title {
+  display: block;
+}
+.grid {
+  width: 100%;
+  grid-template-columns: repeat(8, 1fr);
+  display: grid;
+  position: relative;
+}
+.grid__item {
+  will-change: transform;
+  grid-column: var(--c);
+  grid-row: var(--r);
+  position: relative;
+}
+.grid__item-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  will-change: transform, opacity;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+}
+.demo-1 .grid__item-img {
+  filter: contrast(70%);
+}
+.cover {
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.cover__title {
+  margin: 0;
+  font-family: novecento-sans-wide, sans-serif;
+  font-size: 8vw;
+  font-weight: 600;
+}
+.cover__title sup {
+  vertical-align: 75%;
+  font-size: 4vw;
+  font-weight: 700;
+}
+.cover__subtitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.footer {
+  color: var(--color-text-alt);
+  background: var(--color-bg-alt);
+  height: 100vh;
+  z-index: 200;
+  text-transform: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vh;
+  line-height: 1.2;
+  display: flex;
+  position: relative;
+}
+.footer p {
+  max-width: 40ch;
+  font-size: 0.7em;
+}
+@media screen and (min-width: 53em) {
+  .frame {
+    height: 100vh;
+    grid-template: "prev sponsor" ". ." 1fr "title demos" / auto 1fr;
+  }
+  .frame__demos {
+    white-space: nowrap;
+    justify-self: end;
+    margin: 0 1rem;
+  }
+  .frame__demo--current:after {
+    content: "";
+    height: 120%;
+    width: 1px;
+    background: currentColor;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+  }
+  .frame__demos-title {
+    display: inline;
+  }
+}
