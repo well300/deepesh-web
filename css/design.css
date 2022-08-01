@@ -15,7 +15,7 @@ body {
   --color-text-alt: #111;
   color: var(--color-text);
   background-color: var(--color-bg);
-  background-gif: url(https://images.assetsdelivery.com/compings_v2/paseven/paseven2102/paseven210200135.jpg);
+  background-image: url(https://images.assetsdelivery.com/compings_v2/paseven/paseven2102/paseven210200135.jpg);
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
