@@ -15,7 +15,7 @@ body {
   --color-text-alt: #111;
   color: var(--color-text);
   background-color: var(--color-bg);
-  background-image: url(https://telegra.ph/file/91bff70342272b1813bcc.jpg);
+  background-gif: url(https://telegra.ph/file/8edbad56a7f6d253bdf06.mp4);
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
